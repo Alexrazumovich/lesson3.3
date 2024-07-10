@@ -17,6 +17,7 @@ target_x=random.randint(0, SCREEN_WIDTH-target_width)
 target_y=random.randint(0, SCREEN_HEIGHT-target_height)
 color=(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 running=True
+res=0;
 while running:
     screen.fill(color)
     for event in pygame.event.get():
@@ -28,6 +29,8 @@ while running:
                 target_x=random.randint(0, SCREEN_WIDTH-target_width)
                 target_y=random.randint(0, SCREEN_HEIGHT-target_height)
                 color=(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+                res+=1
+                pygame.display.set_caption(f"Игра тир. {res} попаданий")
     screen.blit(target_img, (target_x, target_y))
     pygame.display.update()
 pygame.quit()
